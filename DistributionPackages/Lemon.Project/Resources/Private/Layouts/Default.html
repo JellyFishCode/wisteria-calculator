@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title><f:render section="Title" /></title>
+			<style>
+				:root {
+					--table-size: 180px;
+					--font-size: 1.5rem;
+				}
+
+				table {
+					width: var(--table-size);
+					height: var(--table-size);
+					margin: auto;
+					border-collapse: collapse;
+					font-size: var(--font-size);
+				}
+
+				td,
+				th {
+					border: 1px solid;
+					text-align: center;
+					vertical-align: middle;
+					white-space: nowrap;
+					width: calc(var(--table-size) / 3);
+					max-width: calc(var(--table-size) / 3);
+					max-height: calc(var(--table-size) / 3);
+					overflow: hidden;
+				}
+
+				.square {
+					display:block;
+					background: red;
+				}
+
+			</style>
+			<link rel="stylesheet" href="../../Public/Stylesheets/Build/style.css">
+		</head>
+    <body>
+        <f:flashMessages class="flashmessages" />
+
+        <h1><f:render section="Title" /></h1>
+        <f:render section="Content" />
+    </body>
+</html>

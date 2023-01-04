@@ -1,0 +1,117 @@
+<f:layout name="Default"/>
+
+<f:section name="Title">A list of tic tac toes</f:section>
+
+<f:section name="Content">
+	<h3>Tic Tac Toe</h3>
+
+	<f:if condition="{roundResult} !== 10">
+		<div id="blurBackground">
+			<f:if condition="{roundResult} === 1">
+				<f:then>
+					<div class="modal">
+						Player X has won!<br>
+						<f:form method="post" action="restart">
+							<f:form.submit value="New Game"/>
+						</f:form>
+					</div>
+				</f:then>
+				<f:else if="{roundResult} === 0">
+					<div class="modal">
+						Player O has won!<br>
+						<f:form method="post" action="restart">
+							<f:form.submit value="New Game"/>
+						</f:form>
+					</div>
+				</f:else>
+				<f:else if="{roundResult} === -1">
+					<div class="modal">
+						Draw!
+						<f:form method="post" action="restart">
+							<f:form.submit value="New Game"/>
+						</f:form>
+					</div>
+				</f:else>
+			</f:if>
+		</div>
+	</f:if>
+
+	<hr>
+	<f:if condition="{ticTacToes}">
+		<f:then>
+			<div>Turn Player:
+				<f:if condition="{turnCount} % 2 == 0">
+					<f:then>
+						X
+					</f:then>
+					<f:else>
+						O
+					</f:else>
+				</f:if>
+			</div>
+			<table>
+				<tr>
+					<f:for each="{ticTacToes}" as="tic" key="itemKey">
+						<f:if condition="{tic.fieldId} % 3 == 0">
+							<f:then>
+								<th>
+									<div>
+										<p>
+											<f:form method="post" action="clickField" object="{tic}" objectName="tic">
+												<f:if condition="{tic.fieldValue} == 1">
+													<f:then>
+														<f:form.submit disabled="disabled" value="X"/>
+													</f:then>
+													<f:else if="{tic.fieldValue} == 0">
+														<f:form.submit disabled="disabled" value="O"/>
+													</f:else>
+													<f:else>
+														<f:form.submit value="-"/>
+													</f:else>
+												</f:if>
+											</f:form>
+										</p>
+									</div>
+								</th>
+				</tr>
+				<tr>
+		</f:then>
+		<f:else>
+			<th>
+				<p>
+					<f:form method="post" action="clickField" object="{tic}" objectName="tic">
+						<f:if condition="{tic.fieldValue} == 1">
+							<f:then>
+								<f:form.submit disabled="disabled" value="X"/>
+							</f:then>
+							<f:else if="{tic.fieldValue} == 0">
+								<f:form.submit disabled="disabled" value="O"/>
+							</f:else>
+							<f:else>
+								<f:form.submit value="-"/>
+							</f:else>
+						</f:if>
+					</f:form>
+				</p>
+			</th>
+		</f:else>
+	</f:if>
+	</f:for>
+	</tr>
+	</table>
+
+	</f:then>
+	<f:else>
+		<div>You need to initiate the board through the command "./flow tictactoe:initiateBoard"</div>
+	</f:else>
+	</f:if>
+
+
+	<br>
+	<hr>
+	<p>
+		<f:link.action action="back">Back to Index</f:link.action>
+	</p>
+	<br>
+
+</f:section>

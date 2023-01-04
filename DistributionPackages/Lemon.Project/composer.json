@@ -1,0 +1,18 @@
+{
+    "description": "",
+    "type": "neos-package",
+    "name": "lemon/project",
+    "require": {
+        "neos/flow": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lemon\\Project\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Lemon.Project"
+        }
+    }
+}

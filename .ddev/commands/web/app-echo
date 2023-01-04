@@ -1,0 +1,8 @@
+#!/bin/bash
+
+## #ddev-generated
+## Description: Runs the script echo.sh and echooes the result
+## Usage: app-echo
+## Example: "ddev app-echo"
+
+./Build/echo.sh

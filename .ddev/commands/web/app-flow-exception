@@ -1,0 +1,14 @@
+#!/bin/bash
+
+## #ddev-generated
+## Description: Show most recent flow exception
+## Usage: app-flow-exception
+## Example: "ddev app-flow-exception" or "ddev app-flow 202008051043115436bd"
+
+cd ./Data/Logs/Exceptions/
+
+if [ -z "$1" ]; then
+    ls -Art | tail -n 1 | xargs cat
+else
+    cat ${1}.txt
+fi
