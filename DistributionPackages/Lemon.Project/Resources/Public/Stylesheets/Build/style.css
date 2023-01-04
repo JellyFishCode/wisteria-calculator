@@ -1,0 +1,27 @@
+body{
+  background: lightgoldenrodyellow;
+  padding: 2% 7%;
+  font-family: YuGothic, serif;
+}
+
+.modal{
+  background: palegreen;
+  width: 600px;
+  height: 400px;
+  box-sizing: border-box; /* include padding and border in width and height */
+  border: 1px solid black;
+  padding: 100px;
+  text-align: center;
+  line-height: 30px;
+  display: block;
+  margin: 15vh auto;
+}
+
+#blurBackground{
+  background: rgba(0,0,0,0.7);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+}

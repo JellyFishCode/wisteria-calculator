@@ -1,0 +1,8 @@
+#!/bin/bash
+
+## #ddev-generated
+## Description: Execute flow command
+## Usage: app-flow
+## Example: "ddev app-flow" or "ddev app-flow help"
+
+./flow $@
