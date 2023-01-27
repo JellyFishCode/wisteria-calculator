@@ -5,11 +5,19 @@ namespace Lemon\Project\Controller;
  * This file is part of the Lemon.Project package.
  */
 
+use Monolog\Logger;
 use Neos\Flow\Annotations as Flow;
 use Lemon\Project\Domain\Model\Note;
+use Neos\Flow\Log\Utility\LogEnvironment;
+use Psr\Log\LoggerInterface;
 
 class NoteController extends AbstractRouteController
 {
+    /**
+     * @Flow\Inject
+     * @var LoggerInterface
+     */
+    protected $lemonLogger;
 
     /**
      * @Flow\Inject
@@ -23,8 +31,6 @@ class NoteController extends AbstractRouteController
     public function indexAction()
     {
         $this->view->assign('notes', $this->noteRepository->findAll());
-        return;
-        echo 'asef';
     }
 
     /**
@@ -41,6 +47,7 @@ class NoteController extends AbstractRouteController
      */
     public function newAction()
     {
+        $this->lemonLogger->info('Lemons set!', LogEnvironment::fromMethodName(__METHOD__));
     }
 
     /**

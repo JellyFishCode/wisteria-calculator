@@ -15,13 +15,15 @@
         "vendor-dir": "Packages/Libraries",
         "bin-dir": "bin",
         "allow-plugins": {
-            "neos/composer-plugin": true
+            "neos/composer-plugin": true,
+            "cyclonedx/cyclonedx-php-composer": true
         }
     },
     "require": {
         "neos/flow": "~8.1.0",
         "neos/welcome": "~8.1.0",
-        "lemon/project": "@dev"
+        "lemon/project": "@dev",
+        "flowpack/monolog": "dev-hotfix"
     },
     "require-dev": {
         "neos/kickstarter": "~8.1.0",
@@ -32,12 +34,16 @@
         "friendsofphp/php-cs-fixer": "^3.13",
         "phpstan/phpstan": "^1.9"
     },
-    "repositories": {
-        "distributionPackages": {
+    "repositories":[
+        {
+            "type": "vcs",
+            "url": "https://github.com/sammi-vay/Flowpack.Monolog.git"
+        },
+        {
             "type": "path",
             "url": "./DistributionPackages/*"
         }
-    },
+    ],
     "suggest": {
         "ext-pdo_sqlite": "For running functional tests out-of-the-box this is required",
         "neos/fluid-adaptor": "For rendering templates with TYPO3.Fluid"
