@@ -1,0 +1,11 @@
+Lemon:
+  Project:
+    propertyZ:
+      key7: 'asdf'
+    array:
+      - 'val1'
+      - 'val2'
+      - 'val3'
+    arr2:
+      keyOne: 'keYvalueOne'
+      keyTwo: 'KeyValueTwo'

@@ -24,6 +24,12 @@ class TicTacToeCommandController extends CommandController
     protected TurnCounterRepository $turnCounterRepository;
 
     /**
+     * @Flow\InjectConfiguration
+     * @var array
+     */
+    protected array $settings;
+
+    /**
      * tictactoe:initiateBoard
      * Command which needs to be initiated before playing TicTacToe
      *
@@ -45,9 +51,8 @@ class TicTacToeCommandController extends CommandController
         count($this->turnCounterRepository->findAll()));
     }
 
-    public function sayHelloCommand(): void
+    public function testCommand(): void
     {
-        $settings = ['defaultConfigurations' => ['authToken' => 'LNdVqWDhmHRwwBU66RpD', 'emails' => 'sammi.vay@visol.ch']];
-        echo $settings['defaultConfigurations']['authToken'];
+        print_r($this->settings);
     }
 }
