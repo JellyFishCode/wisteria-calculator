@@ -1,46 +1,91 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title><f:render section="Title" /></title>
-			<style>
-				:root {
-					--table-size: 180px;
-					--font-size: 1.5rem;
-				}
+<head>
+	<meta charset="utf-8">
+	<title><f:render section="Title" /></title>
+	<style>
+		:root {
+			--table-size: 180px;
+			--font-size: 1.5rem;
+		}
 
-				table {
-					width: var(--table-size);
-					height: var(--table-size);
-					margin: auto;
-					border-collapse: collapse;
-					font-size: var(--font-size);
-				}
+		table {
+			width: var(--table-size);
+			height: var(--table-size);
+			margin: auto;
+			border-collapse: collapse;
+			font-size: var(--font-size);
+		}
 
-				td,
-				th {
-					border: 1px solid;
-					text-align: center;
-					vertical-align: middle;
-					white-space: nowrap;
-					width: calc(var(--table-size) / 3);
-					max-width: calc(var(--table-size) / 3);
-					max-height: calc(var(--table-size) / 3);
-					overflow: hidden;
-				}
+		td,
+		th {
+			border: 1px solid;
+			text-align: center;
+			vertical-align: middle;
+			white-space: nowrap;
+			width: calc(var(--table-size) / 3);
+			max-width: calc(var(--table-size) / 3);
+			max-height: calc(var(--table-size) / 3);
+			overflow: hidden;
+		}
 
-				.square {
-					display:block;
-					background: red;
-				}
+		.square {
+			display: block;
+			background: red;
+		}
 
-			</style>
-			<link rel="stylesheet" href="../../Public/Stylesheets/Build/style.css">
-		</head>
-    <body>
-        <f:flashMessages class="flashmessages" />
+		.column {
+			float: left;
+			width: 40%;
+		}
 
-        <h1><f:render section="Title" /></h1>
-        <f:render section="Content" />
-    </body>
+		/* Clear floats after the columns */
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+
+		input[type=text], select {
+			width: 60%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+
+		input[type=submit] {
+			width: 60%;
+			background-color: #4CAF50;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px auto;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		input[type=submit]:hover {
+			background-color: #45a049;
+		}
+
+		.formsDiv{
+			right: 0;
+			border-radius: 5px;
+			background-color: #f2f2f2;
+			padding: 20px;
+		}
+	</style>
+	<link rel="stylesheet" href="../../Public/Stylesheets/Build/style.css">
+</head>
+<body>
+<f:flashMessages class="flashmessages"/>
+
+<h1>
+	<f:render section="Title"/>
+</h1>
+<f:render section="Content"/>
+</body>
 </html>

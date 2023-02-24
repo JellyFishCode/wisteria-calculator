@@ -23,7 +23,8 @@
         "neos/flow": "~8.1.0",
         "neos/welcome": "~8.1.0",
         "lemon/project": "@dev",
-        "flowpack/monolog": "dev-hotfix"
+        "flowpack/monolog": "dev-hotfix",
+        "gedmo/doctrine-extensions": "^3.11"
     },
     "require-dev": {
         "neos/kickstarter": "~8.1.0",
