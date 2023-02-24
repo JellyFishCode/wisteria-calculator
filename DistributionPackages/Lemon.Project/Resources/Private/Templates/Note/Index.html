@@ -1,25 +1,47 @@
-
 <f:layout name="Default"/>
 
 <f:section name="Title">Schwizerdütschi Redewändige</f:section>
+
 <f:section name="Content">
 	<div class="row">
 		<div class="column">
 			<f:if condition="{notes}">
 				<f:then>
-					<ul>
+					<table class="styled-table">
+						<thead>
+						<tr>
+							<th>Redewändig</th>
+							<th>Kommentar</th>
+							<th>Ersteut</th>
+							<th>Bearbeitä</th>
+							<th><i class="fa-solid fa-trash"></i></th>
+						</tr>
+						</thead>
+						<tbody>
 						<f:for each="{notes}" as="note">
-							<li>
-								<!--<f:link.action action="show" arguments="{note: note}">{note.name}</f:link.action>-->
-								<div>{note.name}</div>
-								<f:link.action action="edit" arguments="{note: note}"><i class="fa-regular fa-pen-to-square"></i></f:link.action>
-								<p>{note.comment} Comment</p>
-								<f:form action="delete" arguments="{note: note}">
-									<f:form.submit value="Löschä"/>
-								</f:form>
-							</li>
+							<tr>
+								<td>
+									<f:link.action action="show" arguments="{note: note}">{note.name}</f:link.action>
+								</td>
+								<td>
+									{note.comment}
+								</td>
+								<td>
+									<f:format.date>{note.createdDateTime}</f:format.date>
+								</td>
+								<td>
+									<f:link.action action="edit" arguments="{note: note}"><i class="fa-solid fa-pen-to-square"></i>
+									</f:link.action>
+								</td>
+								<td>
+									<f:form action="delete" arguments="{note: note}">
+										<f:form.submit value="Löschä"/>
+									</f:form>
+								</td>
+							</tr>
 						</f:for>
-					</ul>
+						</tbody>
+					</table>
 				</f:then>
 				<f:else>
 					<p>No keni Notizä erfasst!</p>
