@@ -1,0 +1,22 @@
+Neos:
+  Flow:
+    persistence:
+      doctrine:
+        eventListeners:
+          Gedmo\Timestampable\TimestampableListener:
+            events:
+              - prePersist
+              - onFlush
+              - loadClassMetadata
+            listener: Gedmo\Timestampable\TimestampableListener
+          Gedmo\Sortable\SortableListener:
+            events:
+              - prePersist
+              - onFlush
+              - loadClassMetadata
+            listener: Gedmo\Sortable\SortableListener
+          Gedmo\SoftDeleteable\SoftDeleteableListener:
+            events:
+              - onFlush
+              - loadClassMetadata
+            listener: Gedmo\SoftDeleteable\SoftDeleteableListener

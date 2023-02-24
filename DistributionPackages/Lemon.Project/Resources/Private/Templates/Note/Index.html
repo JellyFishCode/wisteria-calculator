@@ -1,27 +1,46 @@
-<f:layout name="Default" />
+<f:layout name="Default"/>
 
-<f:section name="Title">Mini Notizä</f:section>
+<f:section name="Title">Schwizerdütschi Redewändige</f:section>
 
 <f:section name="Content">
-    <f:if condition="{notes}">
-        <f:then>
-            <ul>
-                <f:for each="{notes}" as="note">
-                    <li>
-                        <f:link.action action="show" arguments="{note: note}">{note.name}</f:link.action>
-                        <f:link.action action="edit" arguments="{note: note}">Edit</f:link.action>
-                        <f:form action="delete" arguments="{note: note}">
-                            <f:form.submit value="Delete" />
-                        </f:form>
-                    </li>
-                </f:for>
-            </ul>
-        </f:then>
-        <f:else>
-            <p>No notes created yet.</p>
-        </f:else>
-    </f:if>
-    <p><f:link.action action="new">Create a new note</f:link.action></p>
-		<p><f:link.action action="back">Back to Index</f:link.action></p>
+	<div class="row">
+		<div class="column">
+			<f:if condition="{notes}">
+				<f:then>
+					<ul>
+						<f:for each="{notes}" as="note">
+							<li>
+								<f:link.action action="show" arguments="{note: note}">{note.name}</f:link.action>
+								<f:link.action action="edit" arguments="{note: note}">Bearbeitä</f:link.action>
+								<f:form action="delete" arguments="{note: note}">
+									<f:form.submit value="Löschä"/>
+								</f:form>
+							</li>
+						</f:for>
+					</ul>
+				</f:then>
+				<f:else>
+					<p>No keni Notizä erfasst!</p>
+				</f:else>
+			</f:if>
+		</div>
+		<div class="column formsDiv">
+			<f:form action="create" controller="note" package="Lemon.Project" objectName="newNote">
+				<label for="name">Chääs</label><br>
+				<f:form.textfield property="name" id="name"/>
+				<br>
+				<label for="comment">Kommentar</label><br>
+				<f:form.textarea property="comment" id="comment"/>
+
+				<br>
+				<f:form.submit value="Create"/>
+			</f:form>
+		</div>
+	</div>
+
+	<hr>
+	<p>
+		<f:link.action action="back">Zrüg zum Index</f:link.action>
+	</p>
 
 </f:section>
