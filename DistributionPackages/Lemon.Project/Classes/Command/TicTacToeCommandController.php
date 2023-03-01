@@ -50,9 +50,4 @@ class TicTacToeCommandController extends CommandController
         $this->outputLine('Created ' . count($this->ticTacToeRepository->findAll()) . ' Tics and Reset Counter to '.
         count($this->turnCounterRepository->findAll()));
     }
-
-    public function testCommand(): void
-    {
-        print_r($this->settings);
-    }
 }
