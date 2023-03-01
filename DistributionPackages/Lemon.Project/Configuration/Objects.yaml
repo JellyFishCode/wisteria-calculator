@@ -7,3 +7,13 @@ Lemon\Project\Controller\NoteController:
         arguments:
           1:
             value: lemonLogger
+Lemon\Project\Factory\LemonDriver:
+    scope: prototype
+    factoryObjectName: Lemon\Project\Factory\LemonDriverInterface
+    factoryMethodName: get
+    arguments:
+      1:
+        setting: 'Lemon.Project.Property1.value1'
+      2:
+        setting: 'Lemon.Project.Property2.value2'
+
