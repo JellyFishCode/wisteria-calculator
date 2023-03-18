@@ -7,6 +7,7 @@ Lemon\Project\Controller\NoteController:
         arguments:
           1:
             value: lemonLogger
+
 Lemon\Project\Factory\LemonDriver:
     scope: prototype
     factoryObjectName: Lemon\Project\Factory\LemonDriverInterface

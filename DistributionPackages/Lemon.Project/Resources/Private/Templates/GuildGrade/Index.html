@@ -1,0 +1,64 @@
+<f:layout name="Default"/>
+
+<f:section name="Title">Guild Grades Overview</f:section>
+
+<f:section name="Content">
+	<div class="row">
+		<div class="column">
+			<f:if condition="{guildGrades}">
+				<f:then>
+					<table class="styled-table">
+						<thead>
+						<tr>
+							<th>Guild Grade</th>
+							<th>Contribution Points</th>
+							<th>Fallback Levels</th>
+						</tr>
+						</thead>
+						<tbody>
+						<f:for each="{guildGrades}" as="guildGrade">
+							<tr>
+								<td>
+									{guildGrade.name}
+								</td>
+								<td>
+									<f:format.number decimals="0" thousandsSeparator="'">{guildGrade.neededContributionPoints}</f:format.number>
+								</td>
+								<td>
+									{guildGrade.fallbackLevels}
+								</td>
+							</tr>
+						</f:for>
+						</tbody>
+					</table>
+				</f:then>
+
+				<f:else>
+					<p>No Guild Grades created yet.</p>
+				</f:else>
+			</f:if>
+		</div>
+
+			<div class="columnRight">
+			<f:form action="create" controller="guildGrade" object="{guildGrade}" objectName="guildGrade">
+				<div class="materialCreation">
+					<label for="name">Guild Grade name:</label>
+					<f:form.textfield property="name" id="name"/>
+
+					<label for="neededContributionPoints">Needed Contribution Points:</label>
+					<f:form.textfield property="neededContributionPoints" id="neededContributionPoints"/>
+
+					<label for="fallbackLevels">Fallback Levels:</label>
+					<f:form.textfield property="fallbackLevels" id="fallbackLevels"/>
+
+					<f:form.submit value="Create"/>
+				</div>
+			</f:form>
+			</div>
+
+	</div>
+		<hr>
+	<p>
+		<f:link.action action="back">Back to Index</f:link.action>
+	</p>
+</f:section>

@@ -1,0 +1,115 @@
+<f:layout name="Default"/>
+
+<f:section name="Title">Contribution Points Calculator</f:section>
+
+<f:section name="Content">
+	<div class="row">
+		<div class="column">
+			<f:if condition="{entries}">
+				<f:then>
+					<table class="styled-table">
+						<thead>
+						<tr>
+							<th>Account Name</th>
+							<th>Contribution Points</th>
+							<th>Edit</th>
+							<th><i class="fa-solid fa-trash"></i></th>
+						</tr>
+						</thead>
+						<tbody>
+						<f:for each="{entries}" as="contributionPointsEntry">
+							<tr>
+								<td>
+									{contributionPointsEntry.name}
+								</td>
+								<td>
+									{contributionPointsEntry.totalContributionPoints}
+								</td>
+								<td>
+									<f:link.action action="calculator" arguments="{contributionPointsEntry: contributionPointsEntry}">
+										<i class="fa-solid fa-pen-to-square"></i>Edit
+									</f:link.action>
+								</td>
+								<td>
+									<f:form action="delete" arguments="{contributionPointsEntry: contributionPointsEntry}">
+										<f:form.submit value="Delete"/>
+									</f:form>
+								</td>
+							</tr>
+						</f:for>
+
+						<!-- Last Row & TOTAL -->
+						<tr>
+							<td></td>
+							<td>{totalAvailableContributionPoints}</td>
+							<td></td>
+							<td></td>
+						</tr>
+
+						</tbody>
+					</table>
+
+				</f:then>
+				<f:else>
+					<p>No entries submitted</p>
+				</f:else>
+			</f:if>
+			<table class="styled-table">
+				<thead>
+				<tr>
+					<th>Guilde Grade</th>
+					<th>Points Needed</th>
+					<th>Weekly Contributions<br>to maintain Guild Grade<br>(30 Players)</th>
+					<th style="width: 10%">Fallback<br>Levels</th>
+				</tr>
+				</thead>
+				<tbody>
+				<f:for each="{guildGrades}" as="guildGrade">
+					<tr>
+						<td>
+							{guildGrade.name}
+						</td>
+						<td>
+							<f:format.number decimals="0" thousandsSeparator="'">
+								{guildGrade.neededContributionPoints}
+							</f:format.number>
+						</td>
+						<td style="text-align: left">
+							Total: <f:format.number decimals="0" thousandsSeparator="'">
+							{guildGrade.weeklyContributionPointsInTotal}
+						</f:format.number>
+							<br>
+							Player: <f:format.number decimals="0" thousandsSeparator="'">
+							{guildGrade.weeklyContributionPointsPerPlayer}
+						</f:format.number>
+
+						</td>
+						<td>
+							{guildGrade.fallbackLevels}
+						</td>
+					</tr>
+				</f:for>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="columnRight formsDiv">
+			<div>
+				These values show the weekly contribution points that each member declares. It will be reset each week.
+			</div>
+			<div>
+				<f:link.action action="calculator">Add new Entry</f:link.action>
+			</div>
+		</div>
+		<div class="columnRight formsDiv">
+			<img class="cuteMember" src="DistributionPackages/Lemon.Project/Resources/Public/Images/cuteMember.jpeg" alt="cute member">
+		</div>
+
+
+	</div>
+
+	<hr>
+	<p>
+		<f:link.action action="back">Back to Index</f:link.action>
+	</p>
+</f:section>

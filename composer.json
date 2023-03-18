@@ -24,7 +24,8 @@
         "neos/welcome": "~8.1.0",
         "lemon/project": "@dev",
         "flowpack/monolog": "dev-hotfix",
-        "gedmo/doctrine-extensions": "^3.11"
+        "gedmo/doctrine-extensions": "^3.11",
+        "visol/cacheable": "^0.3.0"
     },
     "require-dev": {
         "neos/kickstarter": "~8.1.0",
