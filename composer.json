@@ -1,18 +1,16 @@
 {
-    "name": "lime/lemon",
-    "description": "Adding lime to lemon",
+    "name": "wisteria/wisteria-distribution",
+    "description": "Contribution points calculator",
     "license": "MIT",
     "config": {
         "vendor-dir": "Packages/Libraries",
         "bin-dir": "bin",
         "allow-plugins": {
-            "neos/composer-plugin": true,
+            "neos/composer-plugin": true
         }
     },
     "require": {
         "neos/flow": "~8.1.0",
-        "lemon/project": "@dev",
-        "flowpack/monolog": "dev-hotfix",
         "gedmo/doctrine-extensions": "^3.11",
         "visol/cacheable": "^0.3.0"
     },
@@ -25,16 +23,6 @@
         "friendsofphp/php-cs-fixer": "^3.13",
         "phpstan/phpstan": "^1.9"
     },
-    "repositories":[
-        {
-            "type": "vcs",
-            "url": "https://github.com/sammi-vay/Flowpack.Monolog.git"
-        },
-        {
-            "type": "path",
-            "url": "./DistributionPackages/*"
-        }
-    ],
     "suggest": {
         "ext-pdo_sqlite": "For running functional tests out-of-the-box this is required",
         "neos/fluid-adaptor": "For rendering templates with TYPO3.Fluid"

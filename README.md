@@ -1,37 +1,8 @@
-# Project Lemon
+# Wisteria Calculator
 
-Adding Lime to Lemon
+Sum up contribution points
 
-## Description
-
-Citrus
-
-## Getting Started
-
-### Dependencies
-
-* acid-resistance
-
-### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
-
-### Executing program
 
 ```
-https://projectlemon.test/
+https://template.test/
 ```
-
-## Authors
-
-
-Sammi Vay
-
-## Version History
-
--
-
-## License
-
-Project Lemon is licensed under The MIT License (MIT).

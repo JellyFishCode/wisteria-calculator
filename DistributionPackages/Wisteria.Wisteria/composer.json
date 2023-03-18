@@ -1,0 +1,18 @@
+{
+    "description": "",
+    "type": "neos-package",
+    "name": "wisteria/wisteria",
+    "require": {
+        "neos/flow": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wisteria\\Wisteria\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Wisteria.Wisteria"
+        }
+    }
+}
