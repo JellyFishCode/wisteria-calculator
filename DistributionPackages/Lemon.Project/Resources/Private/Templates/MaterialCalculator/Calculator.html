@@ -1,0 +1,58 @@
+<f:layout name="Default"/>
+
+<f:section name="Title">
+	{f:if(condition: '{contributionPointsEntry.name}', then: 'Edit entry from {contributionPointsEntry.name}', else: 'Create new entry')}
+</f:section>
+
+<f:section name="Content">
+	<f:form action="createOrUpdate" object="{entry}" objectName="contributionPointsEntry"
+		arguments="{_all}">
+		<div class="row">
+			<div class="column">
+				<div class="grid-container">
+					<f:for each="{materials}" as="material">
+						<div class="grid-item">
+							<div class="sub-grid">
+								<!-- TODO: add image -->
+								<img src="DistributionPackages/Lemon.Project/Resources/Public/Icons/img.png" alt="{material.name}">
+								<span class="contributionPoints">{material.contributionPointsValue} CP</span>
+							</div>
+							<div><b>{material.name}</b></div>
+							<label for="amount"></label>
+							<input name="materialArray[{material.name}]" property="amount" id="amount" type="number"
+										 placeholder="0"
+										 value="{f:if(condition: '{material.amount}', then: '{material.amount}', else: '')}"
+										 min="0" step="1"
+										 oninput="this.value = Math.round(this.value);">
+						</div>
+					</f:for>
+				</div>
+			</div>
+			<div class="columnRight">
+				<div class="disclaimer">
+					<label for="name">Accountname</label>
+					<f:form.textfield property="name" id="name"
+														value="{f:if(condition: '{contributionPointsEntry.name}',
+														then: '{contributionPointsEntry.name}', else: '')}"
+					/>
+					<br>
+					<f:form.submit value="{f:if(condition: '{contributionPointsEntry.name}', then: 'Update', else: 'Create')}"/>
+				</div>
+
+				<!--
+				<div class="disclaimer">
+					Total Contributionpoints: ""<br>
+					Total Amount: ""
+				</div>-->
+
+			</div>
+		</div>
+	</f:form>
+	<hr>
+
+
+	<br>
+	<p>
+		<f:link.action action="back">Back to Index</f:link.action>
+	</p>
+</f:section>

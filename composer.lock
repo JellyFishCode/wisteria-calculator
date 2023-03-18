@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c72bb6f4463d5b8e7d9b4b10beadbcc5",
+    "content-hash": "e7c57724e4b4b3947891b045e739e3f2",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -2399,7 +2399,7 @@
         },
         {
             "name": "lemon/project",
-            "version": "dev-task/add-cheese",
+            "version": "dev-task/mats-calculator",
             "dist": {
                 "type": "path",
                 "url": "./DistributionPackages/Lemon.Project",
@@ -5804,6 +5804,45 @@
                 "source": "https://github.com/TYPO3/Fluid"
             },
             "time": "2022-07-28T11:24:11+00:00"
+        },
+        {
+            "name": "visol/cacheable",
+            "version": "0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/visol/Visol.Cacheable.git",
+                "reference": "90bb84f98946465e59bbb9763803dcee90f10323"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/visol/Visol.Cacheable/zipball/90bb84f98946465e59bbb9763803dcee90f10323",
+                "reference": "90bb84f98946465e59bbb9763803dcee90f10323",
+                "shasum": ""
+            },
+            "require": {
+                "neos/flow": "~5.3 || ~6.0 || ~7.0 || ~8.0 || dev-master"
+            },
+            "type": "neos-package",
+            "extra": {
+                "neos": {
+                    "package-key": "Visol.Cacheable"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Visol\\Cacheable\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Allows caching the return value of Flow Framework methods through annotations",
+            "support": {
+                "issues": "https://github.com/visol/Visol.Cacheable/issues",
+                "source": "https://github.com/visol/Visol.Cacheable/tree/0.3.0"
+            },
+            "time": "2022-11-02T13:28:32+00:00"
         }
     ],
     "packages-dev": [
