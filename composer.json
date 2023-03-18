@@ -2,26 +2,15 @@
     "name": "lime/lemon",
     "description": "Adding lime to lemon",
     "license": "MIT",
-    "support": {
-        "email": "hello@neos.io",
-        "slack": "http://slack.neos.io/",
-        "forum": "https://discuss.neos.io/",
-        "wiki": "https://discuss.neos.io/c/the-neos-project/project-documentation",
-        "issues": "https://github.com/neos/flow-development-collection/issues",
-        "docs": "https://flowframework.readthedocs.io/",
-        "source": "https://github.com/neos/flow-base-distribution"
-    },
     "config": {
         "vendor-dir": "Packages/Libraries",
         "bin-dir": "bin",
         "allow-plugins": {
             "neos/composer-plugin": true,
-            "cyclonedx/cyclonedx-php-composer": true
         }
     },
     "require": {
         "neos/flow": "~8.1.0",
-        "neos/welcome": "~8.1.0",
         "lemon/project": "@dev",
         "flowpack/monolog": "dev-hotfix",
         "gedmo/doctrine-extensions": "^3.11",
